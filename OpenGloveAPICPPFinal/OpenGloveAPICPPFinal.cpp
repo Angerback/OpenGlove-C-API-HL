@@ -16,6 +16,15 @@ int main()
 		glove++)
 	{
 		std::cout << "Guante: " << *((*(*glove._Ptr)).Name) << std::endl;
+		api.activate((*(*glove._Ptr)), PalmarFingerIndexDistal, 250);
+	}
+
+
+	for (auto glove = response.Glove.begin();
+		glove != response.Glove.end();
+		glove++)
+	{
+		api.activate((*(*glove._Ptr)), PalmarFingerIndexDistal, 0);
 	}
 
     return 0;
