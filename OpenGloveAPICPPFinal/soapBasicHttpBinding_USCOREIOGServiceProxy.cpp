@@ -464,4 +464,59 @@ int BasicHttpBinding_USCOREIOGServiceProxy::Disconnect(const char *endpoint, con
 		return soap_closesock(soap);
 	return soap_closesock(soap);
 }
+
+int BasicHttpBinding_USCOREIOGServiceProxy::ActivateMany(const char *endpoint, const char *soap_action, _ns1__ActivateMany *ns1__ActivateMany, _ns1__ActivateManyResponse &ns1__ActivateManyResponse)
+{	struct soap *soap = this;
+	struct __ns1__ActivateMany soap_tmp___ns1__ActivateMany;
+	if (endpoint)
+		soap_endpoint = endpoint;
+	if (soap_endpoint == NULL)
+		soap_endpoint = "http://localhost:8733/Design_Time_Addresses/OpenGloveWCF/OGService/";
+	if (soap_action == NULL)
+		soap_action = "http://tempuri.org/IOGService/ActivateMany";
+	soap_tmp___ns1__ActivateMany.ns1__ActivateMany = ns1__ActivateMany;
+	soap_begin(soap);
+	soap_set_version(soap, 1); /* SOAP1.1 */
+	soap->encodingStyle = NULL;
+	soap_serializeheader(soap);
+	soap_serialize___ns1__ActivateMany(soap, &soap_tmp___ns1__ActivateMany);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put___ns1__ActivateMany(soap, &soap_tmp___ns1__ActivateMany, "-ns1:ActivateMany", "")
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_endpoint, soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put___ns1__ActivateMany(soap, &soap_tmp___ns1__ActivateMany, "-ns1:ActivateMany", "")
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!static_cast<_ns1__ActivateManyResponse*>(&ns1__ActivateManyResponse)) // NULL ref?
+		return soap_closesock(soap);
+	ns1__ActivateManyResponse.soap_default(soap);
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	ns1__ActivateManyResponse.soap_get(soap, "ns1:ActivateManyResponse", NULL);
+	if (soap->error)
+		return soap_recv_fault(soap, 0);
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	return soap_closesock(soap);
+}
 /* End of client proxy code */

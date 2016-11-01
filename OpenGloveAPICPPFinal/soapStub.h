@@ -36,9 +36,9 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 \******************************************************************************/
 
 
-/* myService.h:489 */
+/* myService.h:495 */
 #ifndef SOAP_TYPE_ns4__Side
-#define SOAP_TYPE_ns4__Side (79)
+#define SOAP_TYPE_ns4__Side (81)
 /* ns4:Side */
 enum ns4__Side {
 	ns4__Side__Right = 0,
@@ -88,10 +88,10 @@ class xsd__unsignedByte_;	/* myService.h:310 */
 class xsd__unsignedInt;	/* myService.h:317 */
 class xsd__unsignedLong;	/* myService.h:324 */
 class xsd__unsignedShort;	/* myService.h:331 */
-class ns3__char__;	/* myService.h:447 */
-class ns3__duration__;	/* myService.h:460 */
-class ns3__guid__;	/* myService.h:472 */
-class ns4__Side_;	/* myService.h:496 */
+class ns3__char__;	/* myService.h:453 */
+class ns3__duration__;	/* myService.h:466 */
+class ns3__guid__;	/* myService.h:478 */
+class ns4__Side_;	/* myService.h:502 */
 class _ns1__GetGloves;	/* myService.h:345 */
 class _ns1__GetGlovesResponse;	/* myService.h:348 */
 class _ns1__RefreshGloves;	/* myService.h:351 */
@@ -104,20 +104,23 @@ class _ns1__Connect;	/* myService.h:369 */
 class _ns1__ConnectResponse;	/* myService.h:372 */
 class _ns1__Disconnect;	/* myService.h:375 */
 class _ns1__DisconnectResponse;	/* myService.h:378 */
-class ns4__ArrayOfGlove;	/* myService.h:381 */
-class ns4__Glove;	/* myService.h:384 */
-class ns4__Glove_x002eConfiguration;	/* myService.h:387 */
-class ns4__Glove_x002eConfiguration_x002eProfile;	/* myService.h:390 */
-class ns5__ArrayOfint;	/* myService.h:393 */
-class _ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring;	/* myService.h:947 */
-class ns5__ArrayOfKeyValueOfstringstring;	/* myService.h:396 */
-class ns5__ArrayOfstring;	/* myService.h:399 */
-struct __ns1__GetGloves;	/* myService.h:1288 */
-struct __ns1__RefreshGloves;	/* myService.h:1358 */
-struct __ns1__SaveGlove;	/* myService.h:1428 */
-struct __ns1__Activate;	/* myService.h:1498 */
-struct __ns1__Connect;	/* myService.h:1568 */
-struct __ns1__Disconnect;	/* myService.h:1638 */
+class _ns1__ActivateMany;	/* myService.h:381 */
+class _ns1__ActivateManyResponse;	/* myService.h:384 */
+class ns4__ArrayOfGlove;	/* myService.h:387 */
+class ns4__Glove;	/* myService.h:390 */
+class ns4__Glove_x002eConfiguration;	/* myService.h:393 */
+class ns4__Glove_x002eConfiguration_x002eProfile;	/* myService.h:396 */
+class ns5__ArrayOfint;	/* myService.h:399 */
+class _ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring;	/* myService.h:999 */
+class ns5__ArrayOfKeyValueOfstringstring;	/* myService.h:402 */
+class ns5__ArrayOfstring;	/* myService.h:405 */
+struct __ns1__GetGloves;	/* myService.h:1342 */
+struct __ns1__RefreshGloves;	/* myService.h:1412 */
+struct __ns1__SaveGlove;	/* myService.h:1482 */
+struct __ns1__Activate;	/* myService.h:1552 */
+struct __ns1__Connect;	/* myService.h:1622 */
+struct __ns1__Disconnect;	/* myService.h:1692 */
+struct __ns1__ActivateMany;	/* myService.h:1762 */
 
 /* myService.h:162 */
 #ifndef SOAP_TYPE_xsd__anyType
@@ -962,9 +965,9 @@ class SOAP_CMAC xsd__unsignedShort : public xsd__anyType {
 };
 #endif
 
-/* myService.h:447 */
+/* myService.h:453 */
 #ifndef SOAP_TYPE_ns3__char__
-#define SOAP_TYPE_ns3__char__ (74)
+#define SOAP_TYPE_ns3__char__ (76)
 /* Type ns3__char__ is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* simple XSD type 'ns3:char': */
 class SOAP_CMAC ns3__char__ : public xsd__anyType {
@@ -1000,9 +1003,9 @@ class SOAP_CMAC ns3__char__ : public xsd__anyType {
 };
 #endif
 
-/* myService.h:460 */
+/* myService.h:466 */
 #ifndef SOAP_TYPE_ns3__duration__
-#define SOAP_TYPE_ns3__duration__ (76)
+#define SOAP_TYPE_ns3__duration__ (78)
 /* Type ns3__duration__ is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* simple XSD type 'ns3:duration': */
 class SOAP_CMAC ns3__duration__ : public xsd__anyType {
@@ -1037,9 +1040,9 @@ class SOAP_CMAC ns3__duration__ : public xsd__anyType {
 };
 #endif
 
-/* myService.h:472 */
+/* myService.h:478 */
 #ifndef SOAP_TYPE_ns3__guid__
-#define SOAP_TYPE_ns3__guid__ (78)
+#define SOAP_TYPE_ns3__guid__ (80)
 /* Type ns3__guid__ is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* simple XSD type 'ns3:guid': */
 class SOAP_CMAC ns3__guid__ : public xsd__anyType {
@@ -1074,9 +1077,9 @@ class SOAP_CMAC ns3__guid__ : public xsd__anyType {
 };
 #endif
 
-/* myService.h:496 */
+/* myService.h:502 */
 #ifndef SOAP_TYPE_ns4__Side_
-#define SOAP_TYPE_ns4__Side_ (80)
+#define SOAP_TYPE_ns4__Side_ (82)
 /* Type ns4__Side_ is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* simple XSD type 'ns4:Side': */
 class SOAP_CMAC ns4__Side_ : public xsd__anyType {
@@ -1590,8 +1593,94 @@ class SOAP_CMAC _ns1__DisconnectResponse {
 #endif
 
 /* myService.h:381 */
+#ifndef SOAP_TYPE__ns1__ActivateMany
+#define SOAP_TYPE__ns1__ActivateMany (66)
+/* complex XSD type 'ns1:ActivateMany': */
+class SOAP_CMAC _ns1__ActivateMany {
+      public:
+        /// Optional element 'ns1:gloveAddress' of XSD type 'xsd:string'
+        std::string *gloveAddress;
+        /// Optional element 'ns1:actuators' of XSD type 'ns5:ArrayOfint'
+        ns5__ArrayOfint *actuators;
+        /// Optional element 'ns1:intensityList' of XSD type 'ns5:ArrayOfint'
+        ns5__ArrayOfint *intensityList;
+        /// Context that manages this object
+        struct soap *soap;
+      public:
+        /// Return unique type id SOAP_TYPE__ns1__ActivateMany
+        virtual int soap_type(void) const { return SOAP_TYPE__ns1__ActivateMany; }
+        /// (Re)set members to default values
+        virtual void soap_default(struct soap*);
+        /// Serialize object to prepare for SOAP 1.1/1.2 encoded output (or with SOAP_XML_GRAPH) by analyzing its (cyclic) structures
+        virtual void soap_serialize(struct soap*) const;
+        /// Output object in XML, compliant with SOAP 1.1 encoding style, return error code or SOAP_OK
+        virtual int soap_put(struct soap*, const char *tag, const char *type) const;
+        /// Output object in XML, with tag and optional id attribute and xsi:type, return error code or SOAP_OK
+        virtual int soap_out(struct soap*, const char *tag, int id, const char *type) const;
+        /// Get object from XML, compliant with SOAP 1.1 encoding style, return pointer to object or NULL on error
+        virtual void *soap_get(struct soap*, const char *tag, const char *type);
+        /// Get object from XML, with matching tag and type (NULL matches any tag and type), return pointer to object or NULL on error
+        virtual void *soap_in(struct soap*, const char *tag, const char *type);
+        /// Return a new object of type _ns1__ActivateMany, default initialized and not managed by a soap context
+        virtual _ns1__ActivateMany *soap_alloc(void) const { return SOAP_NEW(_ns1__ActivateMany); }
+      public:
+        /// Constructor with initializations
+        _ns1__ActivateMany()
+        {
+          gloveAddress = (std::string *)0;
+          actuators = (ns5__ArrayOfint *)0;
+          intensityList = (ns5__ArrayOfint *)0;
+          soap = (struct soap *)0;
+        }
+        virtual ~_ns1__ActivateMany() { }
+        /// Friend allocator used by soap_new__ns1__ActivateMany(struct soap*, int)
+        friend SOAP_FMAC1 _ns1__ActivateMany * SOAP_FMAC2 soap_instantiate__ns1__ActivateMany(struct soap*, int, const char*, const char*, size_t*);
+};
+#endif
+
+/* myService.h:384 */
+#ifndef SOAP_TYPE__ns1__ActivateManyResponse
+#define SOAP_TYPE__ns1__ActivateManyResponse (67)
+/* complex XSD type 'ns1:ActivateManyResponse': */
+class SOAP_CMAC _ns1__ActivateManyResponse {
+      public:
+        /// Optional element 'ns1:ActivateManyResult' of XSD type 'xsd:int'
+        int *ActivateManyResult;
+        /// Context that manages this object
+        struct soap *soap;
+      public:
+        /// Return unique type id SOAP_TYPE__ns1__ActivateManyResponse
+        virtual int soap_type(void) const { return SOAP_TYPE__ns1__ActivateManyResponse; }
+        /// (Re)set members to default values
+        virtual void soap_default(struct soap*);
+        /// Serialize object to prepare for SOAP 1.1/1.2 encoded output (or with SOAP_XML_GRAPH) by analyzing its (cyclic) structures
+        virtual void soap_serialize(struct soap*) const;
+        /// Output object in XML, compliant with SOAP 1.1 encoding style, return error code or SOAP_OK
+        virtual int soap_put(struct soap*, const char *tag, const char *type) const;
+        /// Output object in XML, with tag and optional id attribute and xsi:type, return error code or SOAP_OK
+        virtual int soap_out(struct soap*, const char *tag, int id, const char *type) const;
+        /// Get object from XML, compliant with SOAP 1.1 encoding style, return pointer to object or NULL on error
+        virtual void *soap_get(struct soap*, const char *tag, const char *type);
+        /// Get object from XML, with matching tag and type (NULL matches any tag and type), return pointer to object or NULL on error
+        virtual void *soap_in(struct soap*, const char *tag, const char *type);
+        /// Return a new object of type _ns1__ActivateManyResponse, default initialized and not managed by a soap context
+        virtual _ns1__ActivateManyResponse *soap_alloc(void) const { return SOAP_NEW(_ns1__ActivateManyResponse); }
+      public:
+        /// Constructor with initializations
+        _ns1__ActivateManyResponse()
+        {
+          ActivateManyResult = (int *)0;
+          soap = (struct soap *)0;
+        }
+        virtual ~_ns1__ActivateManyResponse() { }
+        /// Friend allocator used by soap_new__ns1__ActivateManyResponse(struct soap*, int)
+        friend SOAP_FMAC1 _ns1__ActivateManyResponse * SOAP_FMAC2 soap_instantiate__ns1__ActivateManyResponse(struct soap*, int, const char*, const char*, size_t*);
+};
+#endif
+
+/* myService.h:387 */
 #ifndef SOAP_TYPE_ns4__ArrayOfGlove
-#define SOAP_TYPE_ns4__ArrayOfGlove (66)
+#define SOAP_TYPE_ns4__ArrayOfGlove (68)
 /* Type ns4__ArrayOfGlove is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns4:ArrayOfGlove': */
 class SOAP_CMAC ns4__ArrayOfGlove : public xsd__anyType {
@@ -1626,9 +1715,9 @@ class SOAP_CMAC ns4__ArrayOfGlove : public xsd__anyType {
 };
 #endif
 
-/* myService.h:384 */
+/* myService.h:390 */
 #ifndef SOAP_TYPE_ns4__Glove
-#define SOAP_TYPE_ns4__Glove (67)
+#define SOAP_TYPE_ns4__Glove (69)
 /* Type ns4__Glove is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns4:Glove': */
 class SOAP_CMAC ns4__Glove : public xsd__anyType {
@@ -1679,9 +1768,9 @@ class SOAP_CMAC ns4__Glove : public xsd__anyType {
 };
 #endif
 
-/* myService.h:387 */
+/* myService.h:393 */
 #ifndef SOAP_TYPE_ns4__Glove_x002eConfiguration
-#define SOAP_TYPE_ns4__Glove_x002eConfiguration (68)
+#define SOAP_TYPE_ns4__Glove_x002eConfiguration (70)
 /* Type ns4__Glove_x002eConfiguration is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns4:Glove.Configuration': */
 class SOAP_CMAC ns4__Glove_x002eConfiguration : public xsd__anyType {
@@ -1741,9 +1830,9 @@ class SOAP_CMAC ns4__Glove_x002eConfiguration : public xsd__anyType {
 };
 #endif
 
-/* myService.h:390 */
+/* myService.h:396 */
 #ifndef SOAP_TYPE_ns4__Glove_x002eConfiguration_x002eProfile
-#define SOAP_TYPE_ns4__Glove_x002eConfiguration_x002eProfile (69)
+#define SOAP_TYPE_ns4__Glove_x002eConfiguration_x002eProfile (71)
 /* Type ns4__Glove_x002eConfiguration_x002eProfile is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns4:Glove.Configuration.Profile': */
 class SOAP_CMAC ns4__Glove_x002eConfiguration_x002eProfile : public xsd__anyType {
@@ -1788,9 +1877,9 @@ class SOAP_CMAC ns4__Glove_x002eConfiguration_x002eProfile : public xsd__anyType
 };
 #endif
 
-/* myService.h:393 */
+/* myService.h:399 */
 #ifndef SOAP_TYPE_ns5__ArrayOfint
-#define SOAP_TYPE_ns5__ArrayOfint (70)
+#define SOAP_TYPE_ns5__ArrayOfint (72)
 /* Type ns5__ArrayOfint is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns5:ArrayOfint': */
 class SOAP_CMAC ns5__ArrayOfint : public xsd__anyType {
@@ -1825,9 +1914,9 @@ class SOAP_CMAC ns5__ArrayOfint : public xsd__anyType {
 };
 #endif
 
-/* myService.h:947 */
+/* myService.h:999 */
 #ifndef SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring
-#define SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (94)
+#define SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (96)
 /* complex XSD type 'ns5:ArrayOfKeyValueOfstringstring-KeyValueOfstringstring': */
 class SOAP_CMAC _ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring {
       public:
@@ -1865,9 +1954,9 @@ class SOAP_CMAC _ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring {
 };
 #endif
 
-/* myService.h:396 */
+/* myService.h:402 */
 #ifndef SOAP_TYPE_ns5__ArrayOfKeyValueOfstringstring
-#define SOAP_TYPE_ns5__ArrayOfKeyValueOfstringstring (71)
+#define SOAP_TYPE_ns5__ArrayOfKeyValueOfstringstring (73)
 /* Type ns5__ArrayOfKeyValueOfstringstring is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns5:ArrayOfKeyValueOfstringstring': */
 class SOAP_CMAC ns5__ArrayOfKeyValueOfstringstring : public xsd__anyType {
@@ -1903,9 +1992,9 @@ class SOAP_CMAC ns5__ArrayOfKeyValueOfstringstring : public xsd__anyType {
 };
 #endif
 
-/* myService.h:399 */
+/* myService.h:405 */
 #ifndef SOAP_TYPE_ns5__ArrayOfstring
-#define SOAP_TYPE_ns5__ArrayOfstring (72)
+#define SOAP_TYPE_ns5__ArrayOfstring (74)
 /* Type ns5__ArrayOfstring is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* complex XSD type 'ns5:ArrayOfstring': */
 class SOAP_CMAC ns5__ArrayOfstring : public xsd__anyType {
@@ -1940,9 +2029,9 @@ class SOAP_CMAC ns5__ArrayOfstring : public xsd__anyType {
 };
 #endif
 
-/* myService.h:1288 */
+/* myService.h:1342 */
 #ifndef SOAP_TYPE___ns1__GetGloves
-#define SOAP_TYPE___ns1__GetGloves (101)
+#define SOAP_TYPE___ns1__GetGloves (103)
 /* Wrapper: */
 struct __ns1__GetGloves {
       public:
@@ -1961,9 +2050,9 @@ struct __ns1__GetGloves {
 };
 #endif
 
-/* myService.h:1358 */
+/* myService.h:1412 */
 #ifndef SOAP_TYPE___ns1__RefreshGloves
-#define SOAP_TYPE___ns1__RefreshGloves (105)
+#define SOAP_TYPE___ns1__RefreshGloves (107)
 /* Wrapper: */
 struct __ns1__RefreshGloves {
       public:
@@ -1982,9 +2071,9 @@ struct __ns1__RefreshGloves {
 };
 #endif
 
-/* myService.h:1428 */
+/* myService.h:1482 */
 #ifndef SOAP_TYPE___ns1__SaveGlove
-#define SOAP_TYPE___ns1__SaveGlove (109)
+#define SOAP_TYPE___ns1__SaveGlove (111)
 /* Wrapper: */
 struct __ns1__SaveGlove {
       public:
@@ -2003,9 +2092,9 @@ struct __ns1__SaveGlove {
 };
 #endif
 
-/* myService.h:1498 */
+/* myService.h:1552 */
 #ifndef SOAP_TYPE___ns1__Activate
-#define SOAP_TYPE___ns1__Activate (113)
+#define SOAP_TYPE___ns1__Activate (115)
 /* Wrapper: */
 struct __ns1__Activate {
       public:
@@ -2024,9 +2113,9 @@ struct __ns1__Activate {
 };
 #endif
 
-/* myService.h:1568 */
+/* myService.h:1622 */
 #ifndef SOAP_TYPE___ns1__Connect
-#define SOAP_TYPE___ns1__Connect (117)
+#define SOAP_TYPE___ns1__Connect (119)
 /* Wrapper: */
 struct __ns1__Connect {
       public:
@@ -2045,9 +2134,9 @@ struct __ns1__Connect {
 };
 #endif
 
-/* myService.h:1638 */
+/* myService.h:1692 */
 #ifndef SOAP_TYPE___ns1__Disconnect
-#define SOAP_TYPE___ns1__Disconnect (121)
+#define SOAP_TYPE___ns1__Disconnect (123)
 /* Wrapper: */
 struct __ns1__Disconnect {
       public:
@@ -2066,10 +2155,31 @@ struct __ns1__Disconnect {
 };
 #endif
 
-/* myService.h:1861 */
+/* myService.h:1762 */
+#ifndef SOAP_TYPE___ns1__ActivateMany
+#define SOAP_TYPE___ns1__ActivateMany (127)
+/* Wrapper: */
+struct __ns1__ActivateMany {
+      public:
+        /** Optional element 'ns1:ActivateMany' of XSD type 'ns1:ActivateMany' */
+        _ns1__ActivateMany *ns1__ActivateMany;
+      public:
+        /** Return unique type id SOAP_TYPE___ns1__ActivateMany */
+        int soap_type() const { return SOAP_TYPE___ns1__ActivateMany; }
+        /** Constructor with member initializations */
+        __ns1__ActivateMany()
+        {
+          ns1__ActivateMany = (_ns1__ActivateMany *)0;
+        }
+        /** Friend allocator used by soap_new___ns1__ActivateMany(struct soap*, int) */
+        friend SOAP_FMAC1 __ns1__ActivateMany * SOAP_FMAC2 soap_instantiate___ns1__ActivateMany(struct soap*, int, const char*, const char*, size_t*);
+};
+#endif
+
+/* myService.h:2001 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Header
-#define SOAP_TYPE_SOAP_ENV__Header (122)
+#define SOAP_TYPE_SOAP_ENV__Header (128)
 /* SOAP_ENV__Header: */
 struct SOAP_ENV__Header {
       public:
@@ -2085,10 +2195,10 @@ struct SOAP_ENV__Header {
 #endif
 #endif
 
-/* myService.h:1861 */
+/* myService.h:2001 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (123)
+#define SOAP_TYPE_SOAP_ENV__Code (129)
 /* Type SOAP_ENV__Code is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* SOAP_ENV__Code: */
 struct SOAP_ENV__Code {
@@ -2112,10 +2222,10 @@ struct SOAP_ENV__Code {
 #endif
 #endif
 
-/* myService.h:1861 */
+/* myService.h:2001 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (125)
+#define SOAP_TYPE_SOAP_ENV__Detail (131)
 /* SOAP_ENV__Detail: */
 struct SOAP_ENV__Detail {
       public:
@@ -2140,10 +2250,10 @@ struct SOAP_ENV__Detail {
 #endif
 #endif
 
-/* myService.h:1861 */
+/* myService.h:2001 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (128)
+#define SOAP_TYPE_SOAP_ENV__Reason (134)
 /* SOAP_ENV__Reason: */
 struct SOAP_ENV__Reason {
       public:
@@ -2163,10 +2273,10 @@ struct SOAP_ENV__Reason {
 #endif
 #endif
 
-/* myService.h:1861 */
+/* myService.h:2001 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (129)
+#define SOAP_TYPE_SOAP_ENV__Fault (135)
 /* SOAP_ENV__Fault: */
 struct SOAP_ENV__Fault {
       public:
@@ -2271,21 +2381,21 @@ typedef std::string xsd__decimal;
 typedef std::string xsd__duration;
 #endif
 
-/* myService.h:443 */
+/* myService.h:449 */
 #ifndef SOAP_TYPE_ns3__char
-#define SOAP_TYPE_ns3__char (73)
+#define SOAP_TYPE_ns3__char (75)
 typedef int ns3__char;
 #endif
 
-/* myService.h:456 */
+/* myService.h:462 */
 #ifndef SOAP_TYPE_ns3__duration
-#define SOAP_TYPE_ns3__duration (75)
+#define SOAP_TYPE_ns3__duration (77)
 typedef std::string ns3__duration;
 #endif
 
-/* myService.h:468 */
+/* myService.h:474 */
 #ifndef SOAP_TYPE_ns3__guid
-#define SOAP_TYPE_ns3__guid (77)
+#define SOAP_TYPE_ns3__guid (79)
 typedef std::string ns3__guid;
 #endif
 
@@ -2313,7 +2423,7 @@ typedef std::string ns3__guid;
 
 /* ns3__char has binding name 'ns3__char' for type 'ns3:char' */
 #ifndef SOAP_TYPE_ns3__char
-#define SOAP_TYPE_ns3__char (73)
+#define SOAP_TYPE_ns3__char (75)
 #endif
 
 /* int has binding name 'int' for type 'xsd:int' */
@@ -2368,7 +2478,7 @@ typedef std::string ns3__guid;
 
 /* enum ns4__Side has binding name 'ns4__Side' for type 'ns4:Side' */
 #ifndef SOAP_TYPE_ns4__Side
-#define SOAP_TYPE_ns4__Side (79)
+#define SOAP_TYPE_ns4__Side (81)
 #endif
 
 /* bool has binding name 'bool' for type 'xsd:boolean' */
@@ -2378,72 +2488,82 @@ typedef std::string ns3__guid;
 
 /* _ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring has binding name '_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring' for type '' */
 #ifndef SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring
-#define SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (94)
+#define SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (96)
 #endif
 
 /* ns4__Side_ has binding name 'ns4__Side_' for type 'ns4:Side' */
 #ifndef SOAP_TYPE_ns4__Side_
-#define SOAP_TYPE_ns4__Side_ (80)
+#define SOAP_TYPE_ns4__Side_ (82)
 #endif
 
 /* ns3__guid__ has binding name 'ns3__guid__' for type 'ns3:guid' */
 #ifndef SOAP_TYPE_ns3__guid__
-#define SOAP_TYPE_ns3__guid__ (78)
+#define SOAP_TYPE_ns3__guid__ (80)
 #endif
 
 /* ns3__guid has binding name 'ns3__guid' for type 'ns3:guid' */
 #ifndef SOAP_TYPE_ns3__guid
-#define SOAP_TYPE_ns3__guid (77)
+#define SOAP_TYPE_ns3__guid (79)
 #endif
 
 /* ns3__duration__ has binding name 'ns3__duration__' for type 'ns3:duration' */
 #ifndef SOAP_TYPE_ns3__duration__
-#define SOAP_TYPE_ns3__duration__ (76)
+#define SOAP_TYPE_ns3__duration__ (78)
 #endif
 
 /* ns3__duration has binding name 'ns3__duration' for type 'ns3:duration' */
 #ifndef SOAP_TYPE_ns3__duration
-#define SOAP_TYPE_ns3__duration (75)
+#define SOAP_TYPE_ns3__duration (77)
 #endif
 
 /* ns3__char__ has binding name 'ns3__char__' for type 'ns3:char' */
 #ifndef SOAP_TYPE_ns3__char__
-#define SOAP_TYPE_ns3__char__ (74)
+#define SOAP_TYPE_ns3__char__ (76)
 #endif
 
 /* ns5__ArrayOfstring has binding name 'ns5__ArrayOfstring' for type 'ns5:ArrayOfstring' */
 #ifndef SOAP_TYPE_ns5__ArrayOfstring
-#define SOAP_TYPE_ns5__ArrayOfstring (72)
+#define SOAP_TYPE_ns5__ArrayOfstring (74)
 #endif
 
 /* ns5__ArrayOfKeyValueOfstringstring has binding name 'ns5__ArrayOfKeyValueOfstringstring' for type 'ns5:ArrayOfKeyValueOfstringstring' */
 #ifndef SOAP_TYPE_ns5__ArrayOfKeyValueOfstringstring
-#define SOAP_TYPE_ns5__ArrayOfKeyValueOfstringstring (71)
+#define SOAP_TYPE_ns5__ArrayOfKeyValueOfstringstring (73)
 #endif
 
 /* ns5__ArrayOfint has binding name 'ns5__ArrayOfint' for type 'ns5:ArrayOfint' */
 #ifndef SOAP_TYPE_ns5__ArrayOfint
-#define SOAP_TYPE_ns5__ArrayOfint (70)
+#define SOAP_TYPE_ns5__ArrayOfint (72)
 #endif
 
 /* ns4__Glove_x002eConfiguration_x002eProfile has binding name 'ns4__Glove_x002eConfiguration_x002eProfile' for type 'ns4:Glove.Configuration.Profile' */
 #ifndef SOAP_TYPE_ns4__Glove_x002eConfiguration_x002eProfile
-#define SOAP_TYPE_ns4__Glove_x002eConfiguration_x002eProfile (69)
+#define SOAP_TYPE_ns4__Glove_x002eConfiguration_x002eProfile (71)
 #endif
 
 /* ns4__Glove_x002eConfiguration has binding name 'ns4__Glove_x002eConfiguration' for type 'ns4:Glove.Configuration' */
 #ifndef SOAP_TYPE_ns4__Glove_x002eConfiguration
-#define SOAP_TYPE_ns4__Glove_x002eConfiguration (68)
+#define SOAP_TYPE_ns4__Glove_x002eConfiguration (70)
 #endif
 
 /* ns4__Glove has binding name 'ns4__Glove' for type 'ns4:Glove' */
 #ifndef SOAP_TYPE_ns4__Glove
-#define SOAP_TYPE_ns4__Glove (67)
+#define SOAP_TYPE_ns4__Glove (69)
 #endif
 
 /* ns4__ArrayOfGlove has binding name 'ns4__ArrayOfGlove' for type 'ns4:ArrayOfGlove' */
 #ifndef SOAP_TYPE_ns4__ArrayOfGlove
-#define SOAP_TYPE_ns4__ArrayOfGlove (66)
+#define SOAP_TYPE_ns4__ArrayOfGlove (68)
+#endif
+
+/* _ns1__ActivateManyResponse has binding name '_ns1__ActivateManyResponse' for type '' */
+#ifndef SOAP_TYPE__ns1__ActivateManyResponse
+#define SOAP_TYPE__ns1__ActivateManyResponse (67)
+#endif
+
+/* _ns1__ActivateMany has binding name '_ns1__ActivateMany' for type '' */
+#ifndef SOAP_TYPE__ns1__ActivateMany
+#define SOAP_TYPE__ns1__ActivateMany (66)
 #endif
 
 /* _ns1__DisconnectResponse has binding name '_ns1__DisconnectResponse' for type '' */
@@ -2653,132 +2773,137 @@ typedef std::string ns3__guid;
 
 /* struct SOAP_ENV__Fault has binding name 'SOAP_ENV__Fault' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (129)
+#define SOAP_TYPE_SOAP_ENV__Fault (135)
 #endif
 
 /* struct SOAP_ENV__Reason has binding name 'SOAP_ENV__Reason' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (128)
+#define SOAP_TYPE_SOAP_ENV__Reason (134)
 #endif
 
 /* struct SOAP_ENV__Detail has binding name 'SOAP_ENV__Detail' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (125)
+#define SOAP_TYPE_SOAP_ENV__Detail (131)
 #endif
 
 /* struct SOAP_ENV__Code has binding name 'SOAP_ENV__Code' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (123)
+#define SOAP_TYPE_SOAP_ENV__Code (129)
 #endif
 
 /* struct SOAP_ENV__Header has binding name 'SOAP_ENV__Header' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Header
-#define SOAP_TYPE_SOAP_ENV__Header (122)
+#define SOAP_TYPE_SOAP_ENV__Header (128)
 #endif
 
 /* struct SOAP_ENV__Reason * has binding name 'PointerToSOAP_ENV__Reason' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Reason
-#define SOAP_TYPE_PointerToSOAP_ENV__Reason (131)
+#define SOAP_TYPE_PointerToSOAP_ENV__Reason (137)
 #endif
 
 /* struct SOAP_ENV__Detail * has binding name 'PointerToSOAP_ENV__Detail' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Detail
-#define SOAP_TYPE_PointerToSOAP_ENV__Detail (130)
+#define SOAP_TYPE_PointerToSOAP_ENV__Detail (136)
 #endif
 
 /* struct SOAP_ENV__Code * has binding name 'PointerToSOAP_ENV__Code' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Code
-#define SOAP_TYPE_PointerToSOAP_ENV__Code (124)
+#define SOAP_TYPE_PointerToSOAP_ENV__Code (130)
+#endif
+
+/* _ns1__ActivateMany * has binding name 'PointerTo_ns1__ActivateMany' for type '' */
+#ifndef SOAP_TYPE_PointerTo_ns1__ActivateMany
+#define SOAP_TYPE_PointerTo_ns1__ActivateMany (124)
 #endif
 
 /* _ns1__Disconnect * has binding name 'PointerTo_ns1__Disconnect' for type '' */
 #ifndef SOAP_TYPE_PointerTo_ns1__Disconnect
-#define SOAP_TYPE_PointerTo_ns1__Disconnect (118)
+#define SOAP_TYPE_PointerTo_ns1__Disconnect (120)
 #endif
 
 /* _ns1__Connect * has binding name 'PointerTo_ns1__Connect' for type '' */
 #ifndef SOAP_TYPE_PointerTo_ns1__Connect
-#define SOAP_TYPE_PointerTo_ns1__Connect (114)
+#define SOAP_TYPE_PointerTo_ns1__Connect (116)
 #endif
 
 /* _ns1__Activate * has binding name 'PointerTo_ns1__Activate' for type '' */
 #ifndef SOAP_TYPE_PointerTo_ns1__Activate
-#define SOAP_TYPE_PointerTo_ns1__Activate (110)
+#define SOAP_TYPE_PointerTo_ns1__Activate (112)
 #endif
 
 /* _ns1__SaveGlove * has binding name 'PointerTo_ns1__SaveGlove' for type '' */
 #ifndef SOAP_TYPE_PointerTo_ns1__SaveGlove
-#define SOAP_TYPE_PointerTo_ns1__SaveGlove (106)
+#define SOAP_TYPE_PointerTo_ns1__SaveGlove (108)
 #endif
 
 /* _ns1__RefreshGloves * has binding name 'PointerTo_ns1__RefreshGloves' for type '' */
 #ifndef SOAP_TYPE_PointerTo_ns1__RefreshGloves
-#define SOAP_TYPE_PointerTo_ns1__RefreshGloves (102)
+#define SOAP_TYPE_PointerTo_ns1__RefreshGloves (104)
 #endif
 
 /* _ns1__GetGloves * has binding name 'PointerTo_ns1__GetGloves' for type '' */
 #ifndef SOAP_TYPE_PointerTo_ns1__GetGloves
-#define SOAP_TYPE_PointerTo_ns1__GetGloves (98)
+#define SOAP_TYPE_PointerTo_ns1__GetGloves (100)
 #endif
 
 /* std::vector<_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring> * has binding name 'PointerTostd__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring' for type '' */
 #ifndef SOAP_TYPE_PointerTostd__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring
-#define SOAP_TYPE_PointerTostd__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (96)
+#define SOAP_TYPE_PointerTostd__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (98)
 #endif
 
 /* ns5__ArrayOfKeyValueOfstringstring * has binding name 'PointerTons5__ArrayOfKeyValueOfstringstring' for type 'ns5:ArrayOfKeyValueOfstringstring' */
 #ifndef SOAP_TYPE_PointerTons5__ArrayOfKeyValueOfstringstring
-#define SOAP_TYPE_PointerTons5__ArrayOfKeyValueOfstringstring (92)
+#define SOAP_TYPE_PointerTons5__ArrayOfKeyValueOfstringstring (94)
 #endif
 
 /* ns5__ArrayOfstring * has binding name 'PointerTons5__ArrayOfstring' for type 'ns5:ArrayOfstring' */
 #ifndef SOAP_TYPE_PointerTons5__ArrayOfstring
-#define SOAP_TYPE_PointerTons5__ArrayOfstring (91)
+#define SOAP_TYPE_PointerTons5__ArrayOfstring (93)
 #endif
 
 /* ns4__Glove_x002eConfiguration_x002eProfile * has binding name 'PointerTons4__Glove_x002eConfiguration_x002eProfile' for type 'ns4:Glove.Configuration.Profile' */
 #ifndef SOAP_TYPE_PointerTons4__Glove_x002eConfiguration_x002eProfile
-#define SOAP_TYPE_PointerTons4__Glove_x002eConfiguration_x002eProfile (90)
-#endif
-
-/* ns5__ArrayOfint * has binding name 'PointerTons5__ArrayOfint' for type 'ns5:ArrayOfint' */
-#ifndef SOAP_TYPE_PointerTons5__ArrayOfint
-#define SOAP_TYPE_PointerTons5__ArrayOfint (89)
+#define SOAP_TYPE_PointerTons4__Glove_x002eConfiguration_x002eProfile (92)
 #endif
 
 /* enum ns4__Side * has binding name 'PointerTons4__Side' for type 'ns4:Side' */
 #ifndef SOAP_TYPE_PointerTons4__Side
-#define SOAP_TYPE_PointerTons4__Side (88)
+#define SOAP_TYPE_PointerTons4__Side (91)
 #endif
 
 /* ns4__Glove_x002eConfiguration * has binding name 'PointerTons4__Glove_x002eConfiguration' for type 'ns4:Glove.Configuration' */
 #ifndef SOAP_TYPE_PointerTons4__Glove_x002eConfiguration
-#define SOAP_TYPE_PointerTons4__Glove_x002eConfiguration (87)
+#define SOAP_TYPE_PointerTons4__Glove_x002eConfiguration (90)
 #endif
 
 /* bool * has binding name 'PointerTobool' for type 'xsd:boolean' */
 #ifndef SOAP_TYPE_PointerTobool
-#define SOAP_TYPE_PointerTobool (86)
+#define SOAP_TYPE_PointerTobool (89)
+#endif
+
+/* ns5__ArrayOfint * has binding name 'PointerTons5__ArrayOfint' for type 'ns5:ArrayOfint' */
+#ifndef SOAP_TYPE_PointerTons5__ArrayOfint
+#define SOAP_TYPE_PointerTons5__ArrayOfint (87)
 #endif
 
 /* int * has binding name 'PointerToint' for type 'xsd:int' */
 #ifndef SOAP_TYPE_PointerToint
-#define SOAP_TYPE_PointerToint (84)
+#define SOAP_TYPE_PointerToint (86)
 #endif
 
 /* std::string * has binding name 'PointerTostd__string' for type 'xsd:string' */
 #ifndef SOAP_TYPE_PointerTostd__string
-#define SOAP_TYPE_PointerTostd__string (83)
+#define SOAP_TYPE_PointerTostd__string (85)
 #endif
 
 /* ns4__Glove * has binding name 'PointerTons4__Glove' for type 'ns4:Glove' */
 #ifndef SOAP_TYPE_PointerTons4__Glove
-#define SOAP_TYPE_PointerTons4__Glove (82)
+#define SOAP_TYPE_PointerTons4__Glove (84)
 #endif
 
 /* ns4__ArrayOfGlove * has binding name 'PointerTons4__ArrayOfGlove' for type 'ns4:ArrayOfGlove' */
 #ifndef SOAP_TYPE_PointerTons4__ArrayOfGlove
-#define SOAP_TYPE_PointerTons4__ArrayOfGlove (81)
+#define SOAP_TYPE_PointerTons4__ArrayOfGlove (83)
 #endif
 
 /* unsigned char * has binding name 'PointerTounsignedByte' for type 'xsd:unsignedByte' */
@@ -2803,22 +2928,22 @@ typedef std::string ns3__guid;
 
 /* std::vector<std::string>  has binding name 'std__vectorTemplateOfstd__string' for type 'xsd:string' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfstd__string
-#define SOAP_TYPE_std__vectorTemplateOfstd__string (97)
+#define SOAP_TYPE_std__vectorTemplateOfstd__string (99)
 #endif
 
 /* std::vector<_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring>  has binding name 'std__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring' for type '' */
 #ifndef SOAP_TYPE_std__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring
-#define SOAP_TYPE_std__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (95)
+#define SOAP_TYPE_std__vectorTemplateOf_ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring (97)
 #endif
 
 /* std::vector<int>  has binding name 'std__vectorTemplateOfint' for type 'xsd:int' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfint
-#define SOAP_TYPE_std__vectorTemplateOfint (93)
+#define SOAP_TYPE_std__vectorTemplateOfint (95)
 #endif
 
 /* std::vector<ns4__Glove *>  has binding name 'std__vectorTemplateOfPointerTons4__Glove' for type 'ns4:Glove' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons4__Glove
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons4__Glove (85)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons4__Glove (88)
 #endif
 
 /******************************************************************************\

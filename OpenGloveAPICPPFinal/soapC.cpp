@@ -18,7 +18,7 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 
 #include "soapH.h"
 
-SOAP_SOURCE_STAMP("@(#) soapC.cpp ver 2.8.36 2016-10-17 18:38:15 GMT")
+SOAP_SOURCE_STAMP("@(#) soapC.cpp ver 2.8.36 2016-11-01 23:42:58 GMT")
 
 
 #ifndef WITH_NOGLOBAL
@@ -307,6 +307,8 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		return soap_in_std__string(soap, NULL, NULL, "xsd:string");
 	case SOAP_TYPE_xsd__anyType:
 		return soap_in_xsd__anyType(soap, NULL, NULL, "xsd:anyType");
+	case SOAP_TYPE_PointerTo_ns1__ActivateMany:
+		return soap_in_PointerTo_ns1__ActivateMany(soap, NULL, NULL, "ns1:ActivateMany");
 	case SOAP_TYPE_PointerTo_ns1__Disconnect:
 		return soap_in_PointerTo_ns1__Disconnect(soap, NULL, NULL, "ns1:Disconnect");
 	case SOAP_TYPE_PointerTo_ns1__Connect:
@@ -325,14 +327,14 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		return soap_in_PointerTons5__ArrayOfstring(soap, NULL, NULL, "ns5:ArrayOfstring");
 	case SOAP_TYPE_PointerTons4__Glove_x002eConfiguration_x002eProfile:
 		return soap_in_PointerTons4__Glove_x002eConfiguration_x002eProfile(soap, NULL, NULL, "ns4:Glove.Configuration.Profile");
-	case SOAP_TYPE_PointerTons5__ArrayOfint:
-		return soap_in_PointerTons5__ArrayOfint(soap, NULL, NULL, "ns5:ArrayOfint");
 	case SOAP_TYPE_PointerTons4__Side:
 		return soap_in_PointerTons4__Side(soap, NULL, NULL, "ns4:Side");
 	case SOAP_TYPE_PointerTons4__Glove_x002eConfiguration:
 		return soap_in_PointerTons4__Glove_x002eConfiguration(soap, NULL, NULL, "ns4:Glove.Configuration");
 	case SOAP_TYPE_PointerTobool:
 		return soap_in_PointerTobool(soap, NULL, NULL, "xsd:boolean");
+	case SOAP_TYPE_PointerTons5__ArrayOfint:
+		return soap_in_PointerTons5__ArrayOfint(soap, NULL, NULL, "ns5:ArrayOfint");
 	case SOAP_TYPE_PointerToint:
 		return soap_in_PointerToint(soap, NULL, NULL, "xsd:int");
 	case SOAP_TYPE_PointerTostd__string:
@@ -609,6 +611,14 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		{	*type = SOAP_TYPE__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring;
 			return soap_in__ns5__ArrayOfKeyValueOfstringstring_KeyValueOfstringstring(soap, NULL, NULL, NULL);
 		}
+		if (!soap_match_tag(soap, t, "ns1:ActivateManyResponse"))
+		{	*type = SOAP_TYPE__ns1__ActivateManyResponse;
+			return soap_in__ns1__ActivateManyResponse(soap, NULL, NULL, NULL);
+		}
+		if (!soap_match_tag(soap, t, "ns1:ActivateMany"))
+		{	*type = SOAP_TYPE__ns1__ActivateMany;
+			return soap_in__ns1__ActivateMany(soap, NULL, NULL, NULL);
+		}
 		if (!soap_match_tag(soap, t, "ns1:DisconnectResponse"))
 		{	*type = SOAP_TYPE__ns1__DisconnectResponse;
 			return soap_in__ns1__DisconnectResponse(soap, NULL, NULL, NULL);
@@ -779,6 +789,10 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_putelement(struct soap *soap, const void *ptr, co
 		return ((ns4__Glove *)ptr)->soap_out(soap, tag, id, "ns4:Glove");
 	case SOAP_TYPE_ns4__ArrayOfGlove:
 		return ((ns4__ArrayOfGlove *)ptr)->soap_out(soap, tag, id, "ns4:ArrayOfGlove");
+	case SOAP_TYPE__ns1__ActivateManyResponse:
+		return ((_ns1__ActivateManyResponse *)ptr)->soap_out(soap, "ns1:ActivateManyResponse", id, "");
+	case SOAP_TYPE__ns1__ActivateMany:
+		return ((_ns1__ActivateMany *)ptr)->soap_out(soap, "ns1:ActivateMany", id, "");
 	case SOAP_TYPE__ns1__DisconnectResponse:
 		return ((_ns1__DisconnectResponse *)ptr)->soap_out(soap, "ns1:DisconnectResponse", id, "");
 	case SOAP_TYPE__ns1__Disconnect:
@@ -861,6 +875,8 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_putelement(struct soap *soap, const void *ptr, co
 		return soap_out_std__string(soap, tag, id, (const std::string *)ptr, "xsd:string");
 	case SOAP_TYPE_xsd__anyType:
 		return ((xsd__anyType *)ptr)->soap_out(soap, tag, id, "xsd:anyType");
+	case SOAP_TYPE_PointerTo_ns1__ActivateMany:
+		return soap_out_PointerTo_ns1__ActivateMany(soap, tag, id, (_ns1__ActivateMany *const*)ptr, "ns1:ActivateMany");
 	case SOAP_TYPE_PointerTo_ns1__Disconnect:
 		return soap_out_PointerTo_ns1__Disconnect(soap, tag, id, (_ns1__Disconnect *const*)ptr, "ns1:Disconnect");
 	case SOAP_TYPE_PointerTo_ns1__Connect:
@@ -879,14 +895,14 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_putelement(struct soap *soap, const void *ptr, co
 		return soap_out_PointerTons5__ArrayOfstring(soap, tag, id, (ns5__ArrayOfstring *const*)ptr, "ns5:ArrayOfstring");
 	case SOAP_TYPE_PointerTons4__Glove_x002eConfiguration_x002eProfile:
 		return soap_out_PointerTons4__Glove_x002eConfiguration_x002eProfile(soap, tag, id, (ns4__Glove_x002eConfiguration_x002eProfile *const*)ptr, "ns4:Glove.Configuration.Profile");
-	case SOAP_TYPE_PointerTons5__ArrayOfint:
-		return soap_out_PointerTons5__ArrayOfint(soap, tag, id, (ns5__ArrayOfint *const*)ptr, "ns5:ArrayOfint");
 	case SOAP_TYPE_PointerTons4__Side:
 		return soap_out_PointerTons4__Side(soap, tag, id, (enum ns4__Side *const*)ptr, "ns4:Side");
 	case SOAP_TYPE_PointerTons4__Glove_x002eConfiguration:
 		return soap_out_PointerTons4__Glove_x002eConfiguration(soap, tag, id, (ns4__Glove_x002eConfiguration *const*)ptr, "ns4:Glove.Configuration");
 	case SOAP_TYPE_PointerTobool:
 		return soap_out_PointerTobool(soap, tag, id, (bool *const*)ptr, "xsd:boolean");
+	case SOAP_TYPE_PointerTons5__ArrayOfint:
+		return soap_out_PointerTons5__ArrayOfint(soap, tag, id, (ns5__ArrayOfint *const*)ptr, "ns5:ArrayOfint");
 	case SOAP_TYPE_PointerToint:
 		return soap_out_PointerToint(soap, tag, id, (int *const*)ptr, "xsd:int");
 	case SOAP_TYPE_PointerTostd__string:
@@ -959,6 +975,12 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 		break;
 	case SOAP_TYPE_ns4__ArrayOfGlove:
 		((ns4__ArrayOfGlove *)ptr)->soap_serialize(soap);
+		break;
+	case SOAP_TYPE__ns1__ActivateManyResponse:
+		((_ns1__ActivateManyResponse *)ptr)->soap_serialize(soap);
+		break;
+	case SOAP_TYPE__ns1__ActivateMany:
+		((_ns1__ActivateMany *)ptr)->soap_serialize(soap);
 		break;
 	case SOAP_TYPE__ns1__DisconnectResponse:
 		((_ns1__DisconnectResponse *)ptr)->soap_serialize(soap);
@@ -1083,6 +1105,9 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 	case SOAP_TYPE_xsd__anyType:
 		((xsd__anyType *)ptr)->soap_serialize(soap);
 		break;
+	case SOAP_TYPE___ns1__ActivateMany:
+		soap_serialize___ns1__ActivateMany(soap, (const struct __ns1__ActivateMany *)ptr);
+		break;
 	case SOAP_TYPE___ns1__Disconnect:
 		soap_serialize___ns1__Disconnect(soap, (const struct __ns1__Disconnect *)ptr);
 		break;
@@ -1100,6 +1125,9 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 		break;
 	case SOAP_TYPE___ns1__GetGloves:
 		soap_serialize___ns1__GetGloves(soap, (const struct __ns1__GetGloves *)ptr);
+		break;
+	case SOAP_TYPE_PointerTo_ns1__ActivateMany:
+		soap_serialize_PointerTo_ns1__ActivateMany(soap, (_ns1__ActivateMany *const*)ptr);
 		break;
 	case SOAP_TYPE_PointerTo_ns1__Disconnect:
 		soap_serialize_PointerTo_ns1__Disconnect(soap, (_ns1__Disconnect *const*)ptr);
@@ -1128,9 +1156,6 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 	case SOAP_TYPE_PointerTons4__Glove_x002eConfiguration_x002eProfile:
 		soap_serialize_PointerTons4__Glove_x002eConfiguration_x002eProfile(soap, (ns4__Glove_x002eConfiguration_x002eProfile *const*)ptr);
 		break;
-	case SOAP_TYPE_PointerTons5__ArrayOfint:
-		soap_serialize_PointerTons5__ArrayOfint(soap, (ns5__ArrayOfint *const*)ptr);
-		break;
 	case SOAP_TYPE_PointerTons4__Side:
 		soap_serialize_PointerTons4__Side(soap, (enum ns4__Side *const*)ptr);
 		break;
@@ -1139,6 +1164,9 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 		break;
 	case SOAP_TYPE_PointerTobool:
 		soap_serialize_PointerTobool(soap, (bool *const*)ptr);
+		break;
+	case SOAP_TYPE_PointerTons5__ArrayOfint:
+		soap_serialize_PointerTons5__ArrayOfint(soap, (ns5__ArrayOfint *const*)ptr);
 		break;
 	case SOAP_TYPE_PointerToint:
 		soap_serialize_PointerToint(soap, (int *const*)ptr);
@@ -1250,6 +1278,10 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_instantiate(struct soap *soap, int t, const ch
 		return (void*)soap_instantiate__ns1__Disconnect(soap, -1, type, arrayType, n);
 	case SOAP_TYPE__ns1__DisconnectResponse:
 		return (void*)soap_instantiate__ns1__DisconnectResponse(soap, -1, type, arrayType, n);
+	case SOAP_TYPE__ns1__ActivateMany:
+		return (void*)soap_instantiate__ns1__ActivateMany(soap, -1, type, arrayType, n);
+	case SOAP_TYPE__ns1__ActivateManyResponse:
+		return (void*)soap_instantiate__ns1__ActivateManyResponse(soap, -1, type, arrayType, n);
 	case SOAP_TYPE_ns4__ArrayOfGlove:
 		return (void*)soap_instantiate_ns4__ArrayOfGlove(soap, -1, type, arrayType, n);
 	case SOAP_TYPE_ns4__Glove:
@@ -1278,6 +1310,8 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_instantiate(struct soap *soap, int t, const ch
 		return (void*)soap_instantiate___ns1__Connect(soap, -1, type, arrayType, n);
 	case SOAP_TYPE___ns1__Disconnect:
 		return (void*)soap_instantiate___ns1__Disconnect(soap, -1, type, arrayType, n);
+	case SOAP_TYPE___ns1__ActivateMany:
+		return (void*)soap_instantiate___ns1__ActivateMany(soap, -1, type, arrayType, n);
 #ifndef WITH_NOGLOBAL
 	case SOAP_TYPE_SOAP_ENV__Header:
 		return (void*)soap_instantiate_SOAP_ENV__Header(soap, -1, type, arrayType, n);
@@ -1563,6 +1597,18 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_fdelete(struct soap_clist *p)
 		else
 			SOAP_DELETE_ARRAY(static_cast<_ns1__DisconnectResponse*>(p->ptr));
 		break;
+	case SOAP_TYPE__ns1__ActivateMany:
+		if (p->size < 0)
+			SOAP_DELETE(static_cast<_ns1__ActivateMany*>(p->ptr));
+		else
+			SOAP_DELETE_ARRAY(static_cast<_ns1__ActivateMany*>(p->ptr));
+		break;
+	case SOAP_TYPE__ns1__ActivateManyResponse:
+		if (p->size < 0)
+			SOAP_DELETE(static_cast<_ns1__ActivateManyResponse*>(p->ptr));
+		else
+			SOAP_DELETE_ARRAY(static_cast<_ns1__ActivateManyResponse*>(p->ptr));
+		break;
 	case SOAP_TYPE_ns4__ArrayOfGlove:
 		if (p->size < 0)
 			SOAP_DELETE(static_cast<ns4__ArrayOfGlove*>(p->ptr));
@@ -1646,6 +1692,12 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_fdelete(struct soap_clist *p)
 			SOAP_DELETE(static_cast<struct __ns1__Disconnect*>(p->ptr));
 		else
 			SOAP_DELETE_ARRAY(static_cast<struct __ns1__Disconnect*>(p->ptr));
+		break;
+	case SOAP_TYPE___ns1__ActivateMany:
+		if (p->size < 0)
+			SOAP_DELETE(static_cast<struct __ns1__ActivateMany*>(p->ptr));
+		else
+			SOAP_DELETE_ARRAY(static_cast<struct __ns1__ActivateMany*>(p->ptr));
 		break;
 #ifndef WITH_NOGLOBAL
 	case SOAP_TYPE_SOAP_ENV__Header:
@@ -2007,6 +2059,14 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_finsert(struct soap *soap, int t, int tt, void *
 		DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copy _ns1__DisconnectResponse type=%d location=%p object=%p\n", t, p, q));
 		*(_ns1__DisconnectResponse*)p = *(_ns1__DisconnectResponse*)q;
 		break;
+	case SOAP_TYPE__ns1__ActivateMany:
+		DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copy _ns1__ActivateMany type=%d location=%p object=%p\n", t, p, q));
+		*(_ns1__ActivateMany*)p = *(_ns1__ActivateMany*)q;
+		break;
+	case SOAP_TYPE__ns1__ActivateManyResponse:
+		DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copy _ns1__ActivateManyResponse type=%d location=%p object=%p\n", t, p, q));
+		*(_ns1__ActivateManyResponse*)p = *(_ns1__ActivateManyResponse*)q;
+		break;
 	case SOAP_TYPE_ns4__ArrayOfGlove:
 		DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copy ns4__ArrayOfGlove type=%d location=%p object=%p\n", t, p, q));
 		*(ns4__ArrayOfGlove*)p = *(ns4__ArrayOfGlove*)q;
@@ -2062,6 +2122,10 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_finsert(struct soap *soap, int t, int tt, void *
 	case SOAP_TYPE___ns1__Disconnect:
 		DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copy struct __ns1__Disconnect type=%d location=%p object=%p\n", t, p, q));
 		*(struct __ns1__Disconnect*)p = *(struct __ns1__Disconnect*)q;
+		break;
+	case SOAP_TYPE___ns1__ActivateMany:
+		DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copy struct __ns1__ActivateMany type=%d location=%p object=%p\n", t, p, q));
+		*(struct __ns1__ActivateMany*)p = *(struct __ns1__ActivateMany*)q;
 		break;
 #ifndef WITH_NOGLOBAL
 	case SOAP_TYPE_SOAP_ENV__Header:
@@ -4466,6 +4530,273 @@ void *ns4__ArrayOfGlove::soap_get(struct soap *soap, const char *tag, const char
 SOAP_FMAC3 ns4__ArrayOfGlove * SOAP_FMAC4 soap_get_ns4__ArrayOfGlove(struct soap *soap, ns4__ArrayOfGlove *p, const char *tag, const char *type)
 {
 	if ((p = soap_in_ns4__ArrayOfGlove(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
+void _ns1__ActivateManyResponse::soap_default(struct soap *soap)
+{
+	this->soap = soap;
+	this->_ns1__ActivateManyResponse::ActivateManyResult = NULL;
+	/* transient soap skipped */
+}
+
+void _ns1__ActivateManyResponse::soap_serialize(struct soap *soap) const
+{
+	(void)soap; /* appease -Wall -Werror */
+#ifndef WITH_NOIDREF
+	soap_serialize_PointerToint(soap, &this->_ns1__ActivateManyResponse::ActivateManyResult);
+#endif
+}
+
+int _ns1__ActivateManyResponse::soap_out(struct soap *soap, const char *tag, int id, const char *type) const
+{
+	return soap_out__ns1__ActivateManyResponse(soap, tag, id, this, type);
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__ns1__ActivateManyResponse(struct soap *soap, const char *tag, int id, const _ns1__ActivateManyResponse *a, const char *type)
+{
+	(void)soap; (void)tag; (void)id; (void)a; (void)type; /* appease -Wall -Werror */
+	if (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE__ns1__ActivateManyResponse), type))
+		return soap->error;
+	if (a->ActivateManyResult)
+		soap_element_result(soap, "ns1:ActivateManyResult");
+	if (soap_out_PointerToint(soap, "ns1:ActivateManyResult", -1, &a->_ns1__ActivateManyResponse::ActivateManyResult, ""))
+		return soap->error;
+	return soap_element_end_out(soap, tag);
+}
+
+void *_ns1__ActivateManyResponse::soap_in(struct soap *soap, const char *tag, const char *type)
+{	return soap_in__ns1__ActivateManyResponse(soap, tag, this, type);
+}
+
+SOAP_FMAC3 _ns1__ActivateManyResponse * SOAP_FMAC4 soap_in__ns1__ActivateManyResponse(struct soap *soap, const char *tag, _ns1__ActivateManyResponse *a, const char *type)
+{
+	(void)tag; (void)type; /* appease -Wall -Werror */
+	if (soap_element_begin_in(soap, tag, 0, NULL))
+		return NULL;
+	a = (_ns1__ActivateManyResponse *)soap_id_enter(soap, soap->id, a, SOAP_TYPE__ns1__ActivateManyResponse, sizeof(_ns1__ActivateManyResponse), soap->type, soap->arrayType, soap_instantiate, soap_fbase);
+	if (!a)
+		return NULL;
+	if (soap->alloced && soap->alloced != SOAP_TYPE__ns1__ActivateManyResponse)
+	{	soap_revert(soap);
+		*soap->id = '\0';
+		return (_ns1__ActivateManyResponse *)a->soap_in(soap, tag, type);
+	}
+	if (soap->alloced)
+		a->soap_default(soap);
+	size_t soap_flag_ActivateManyResult1 = 1;
+	if (soap->body && !*soap->href)
+	{
+		for (;;)
+		{	soap->error = SOAP_TAG_MISMATCH;
+			if (soap_flag_ActivateManyResult1 && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_PointerToint(soap, "ns1:ActivateManyResult", &a->_ns1__ActivateManyResponse::ActivateManyResult, "xsd:int"))
+				{	soap_flag_ActivateManyResult1--;
+					continue;
+				}
+			soap_check_result(soap, "ns1:ActivateManyResult");
+			if (soap->error == SOAP_TAG_MISMATCH)
+				soap->error = soap_ignore_element(soap);
+			if (soap->error == SOAP_NO_TAG)
+				break;
+			if (soap->error)
+				return NULL;
+		}
+		if (soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	else
+	{	a = (_ns1__ActivateManyResponse *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE__ns1__ActivateManyResponse, SOAP_TYPE__ns1__ActivateManyResponse, sizeof(_ns1__ActivateManyResponse), 0, soap_finsert, soap_fbase);
+		if (soap->body && soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	return a;
+}
+
+SOAP_FMAC1 _ns1__ActivateManyResponse * SOAP_FMAC2 soap_instantiate__ns1__ActivateManyResponse(struct soap *soap, int n, const char *type, const char *arrayType, size_t *size)
+{
+	DBGLOG(TEST, SOAP_MESSAGE(fdebug, "soap_instantiate__ns1__ActivateManyResponse(%p, %d, %s, %s)\n", soap, n, type?type:"", arrayType?arrayType:""));
+	(void)type; (void)arrayType; /* appease -Wall -Werror */
+	_ns1__ActivateManyResponse *p;
+	size_t k = sizeof(_ns1__ActivateManyResponse);
+	if (n < 0)
+	{	p = SOAP_NEW(_ns1__ActivateManyResponse);
+		if (p)
+			((_ns1__ActivateManyResponse*)p)->soap = soap;
+	}
+	else
+	{	p = SOAP_NEW_ARRAY(_ns1__ActivateManyResponse, n);
+		k *= n;
+		if (p)
+			for (int i = 0; i < n; i++)
+				((_ns1__ActivateManyResponse*)p)[i].soap = soap;
+	}
+	DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Instantiated _ns1__ActivateManyResponse location=%p n=%d\n", p, n));
+	soap_link(soap, p, SOAP_TYPE__ns1__ActivateManyResponse, n, soap_fdelete);
+	if (size)
+		*size = k;
+	return p;
+}
+
+int _ns1__ActivateManyResponse::soap_put(struct soap *soap, const char *tag, const  char *type) const
+{
+	if (soap_out__ns1__ActivateManyResponse(soap, tag ? tag : "ns1:ActivateManyResponse", -2, this, type))
+		return soap->error;
+	return soap_putindependent(soap);
+}
+
+void *_ns1__ActivateManyResponse::soap_get(struct soap *soap, const char *tag, const char *type)
+{
+	return soap_get__ns1__ActivateManyResponse(soap, this, tag, type);
+}
+
+SOAP_FMAC3 _ns1__ActivateManyResponse * SOAP_FMAC4 soap_get__ns1__ActivateManyResponse(struct soap *soap, _ns1__ActivateManyResponse *p, const char *tag, const char *type)
+{
+	if ((p = soap_in__ns1__ActivateManyResponse(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
+void _ns1__ActivateMany::soap_default(struct soap *soap)
+{
+	this->soap = soap;
+	this->_ns1__ActivateMany::gloveAddress = NULL;
+	this->_ns1__ActivateMany::actuators = NULL;
+	this->_ns1__ActivateMany::intensityList = NULL;
+	/* transient soap skipped */
+}
+
+void _ns1__ActivateMany::soap_serialize(struct soap *soap) const
+{
+	(void)soap; /* appease -Wall -Werror */
+#ifndef WITH_NOIDREF
+	soap_serialize_PointerTostd__string(soap, &this->_ns1__ActivateMany::gloveAddress);
+	soap_serialize_PointerTons5__ArrayOfint(soap, &this->_ns1__ActivateMany::actuators);
+	soap_serialize_PointerTons5__ArrayOfint(soap, &this->_ns1__ActivateMany::intensityList);
+#endif
+}
+
+int _ns1__ActivateMany::soap_out(struct soap *soap, const char *tag, int id, const char *type) const
+{
+	return soap_out__ns1__ActivateMany(soap, tag, id, this, type);
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__ns1__ActivateMany(struct soap *soap, const char *tag, int id, const _ns1__ActivateMany *a, const char *type)
+{
+	(void)soap; (void)tag; (void)id; (void)a; (void)type; /* appease -Wall -Werror */
+	if (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE__ns1__ActivateMany), type))
+		return soap->error;
+	if (soap_out_PointerTostd__string(soap, "ns1:gloveAddress", -1, &a->_ns1__ActivateMany::gloveAddress, ""))
+		return soap->error;
+	if (soap_out_PointerTons5__ArrayOfint(soap, "ns1:actuators", -1, &a->_ns1__ActivateMany::actuators, ""))
+		return soap->error;
+	if (soap_out_PointerTons5__ArrayOfint(soap, "ns1:intensityList", -1, &a->_ns1__ActivateMany::intensityList, ""))
+		return soap->error;
+	return soap_element_end_out(soap, tag);
+}
+
+void *_ns1__ActivateMany::soap_in(struct soap *soap, const char *tag, const char *type)
+{	return soap_in__ns1__ActivateMany(soap, tag, this, type);
+}
+
+SOAP_FMAC3 _ns1__ActivateMany * SOAP_FMAC4 soap_in__ns1__ActivateMany(struct soap *soap, const char *tag, _ns1__ActivateMany *a, const char *type)
+{
+	(void)tag; (void)type; /* appease -Wall -Werror */
+	if (soap_element_begin_in(soap, tag, 0, NULL))
+		return NULL;
+	a = (_ns1__ActivateMany *)soap_id_enter(soap, soap->id, a, SOAP_TYPE__ns1__ActivateMany, sizeof(_ns1__ActivateMany), soap->type, soap->arrayType, soap_instantiate, soap_fbase);
+	if (!a)
+		return NULL;
+	if (soap->alloced && soap->alloced != SOAP_TYPE__ns1__ActivateMany)
+	{	soap_revert(soap);
+		*soap->id = '\0';
+		return (_ns1__ActivateMany *)a->soap_in(soap, tag, type);
+	}
+	if (soap->alloced)
+		a->soap_default(soap);
+	size_t soap_flag_gloveAddress1 = 1;
+	size_t soap_flag_actuators1 = 1;
+	size_t soap_flag_intensityList1 = 1;
+	if (soap->body && !*soap->href)
+	{
+		for (;;)
+		{	soap->error = SOAP_TAG_MISMATCH;
+			if (soap_flag_gloveAddress1 && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
+				if (soap_in_PointerTostd__string(soap, "ns1:gloveAddress", &a->_ns1__ActivateMany::gloveAddress, "xsd:string"))
+				{	soap_flag_gloveAddress1--;
+					continue;
+				}
+			if (soap_flag_actuators1 && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_PointerTons5__ArrayOfint(soap, "ns1:actuators", &a->_ns1__ActivateMany::actuators, "ns5:ArrayOfint"))
+				{	soap_flag_actuators1--;
+					continue;
+				}
+			if (soap_flag_intensityList1 && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_PointerTons5__ArrayOfint(soap, "ns1:intensityList", &a->_ns1__ActivateMany::intensityList, "ns5:ArrayOfint"))
+				{	soap_flag_intensityList1--;
+					continue;
+				}
+			if (soap->error == SOAP_TAG_MISMATCH)
+				soap->error = soap_ignore_element(soap);
+			if (soap->error == SOAP_NO_TAG)
+				break;
+			if (soap->error)
+				return NULL;
+		}
+		if (soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	else
+	{	a = (_ns1__ActivateMany *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE__ns1__ActivateMany, SOAP_TYPE__ns1__ActivateMany, sizeof(_ns1__ActivateMany), 0, soap_finsert, soap_fbase);
+		if (soap->body && soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	return a;
+}
+
+SOAP_FMAC1 _ns1__ActivateMany * SOAP_FMAC2 soap_instantiate__ns1__ActivateMany(struct soap *soap, int n, const char *type, const char *arrayType, size_t *size)
+{
+	DBGLOG(TEST, SOAP_MESSAGE(fdebug, "soap_instantiate__ns1__ActivateMany(%p, %d, %s, %s)\n", soap, n, type?type:"", arrayType?arrayType:""));
+	(void)type; (void)arrayType; /* appease -Wall -Werror */
+	_ns1__ActivateMany *p;
+	size_t k = sizeof(_ns1__ActivateMany);
+	if (n < 0)
+	{	p = SOAP_NEW(_ns1__ActivateMany);
+		if (p)
+			((_ns1__ActivateMany*)p)->soap = soap;
+	}
+	else
+	{	p = SOAP_NEW_ARRAY(_ns1__ActivateMany, n);
+		k *= n;
+		if (p)
+			for (int i = 0; i < n; i++)
+				((_ns1__ActivateMany*)p)[i].soap = soap;
+	}
+	DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Instantiated _ns1__ActivateMany location=%p n=%d\n", p, n));
+	soap_link(soap, p, SOAP_TYPE__ns1__ActivateMany, n, soap_fdelete);
+	if (size)
+		*size = k;
+	return p;
+}
+
+int _ns1__ActivateMany::soap_put(struct soap *soap, const char *tag, const  char *type) const
+{
+	if (soap_out__ns1__ActivateMany(soap, tag ? tag : "ns1:ActivateMany", -2, this, type))
+		return soap->error;
+	return soap_putindependent(soap);
+}
+
+void *_ns1__ActivateMany::soap_get(struct soap *soap, const char *tag, const char *type)
+{
+	return soap_get__ns1__ActivateMany(soap, this, tag, type);
+}
+
+SOAP_FMAC3 _ns1__ActivateMany * SOAP_FMAC4 soap_get__ns1__ActivateMany(struct soap *soap, _ns1__ActivateMany *p, const char *tag, const char *type)
+{
+	if ((p = soap_in__ns1__ActivateMany(soap, tag, p, type)))
 		if (soap_getindependent(soap))
 			return NULL;
 	return p;
@@ -9153,6 +9484,91 @@ SOAP_FMAC3 struct SOAP_ENV__Header * SOAP_FMAC4 soap_get_SOAP_ENV__Header(struct
 
 #endif
 
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__ActivateMany(struct soap *soap, struct __ns1__ActivateMany *a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+	a->ns1__ActivateMany = NULL;
+}
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___ns1__ActivateMany(struct soap *soap, const struct __ns1__ActivateMany *a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+#ifndef WITH_NOIDREF
+	soap_serialize_PointerTo_ns1__ActivateMany(soap, &a->ns1__ActivateMany);
+#endif
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___ns1__ActivateMany(struct soap *soap, const char *tag, int id, const struct __ns1__ActivateMany *a, const char *type)
+{
+	(void)soap; (void)tag; (void)id; (void)a; (void)type; /* appease -Wall -Werror */
+	if (soap_out_PointerTo_ns1__ActivateMany(soap, "ns1:ActivateMany", -1, &a->ns1__ActivateMany, ""))
+		return soap->error;
+	return SOAP_OK;
+}
+
+SOAP_FMAC3 struct __ns1__ActivateMany * SOAP_FMAC4 soap_in___ns1__ActivateMany(struct soap *soap, const char *tag, struct __ns1__ActivateMany *a, const char *type)
+{
+	size_t soap_flag_ns1__ActivateMany = 1;
+	short soap_flag;
+	(void)tag; (void)type; /* appease -Wall -Werror */
+	a = (struct __ns1__ActivateMany *)soap_id_enter(soap, "", a, SOAP_TYPE___ns1__ActivateMany, sizeof(struct __ns1__ActivateMany), NULL, NULL, NULL, NULL);
+	if (!a)
+		return NULL;
+	soap_default___ns1__ActivateMany(soap, a);
+		for (soap_flag = 0;; soap_flag = 1)
+		{	soap->error = SOAP_TAG_MISMATCH;
+			if (soap_flag_ns1__ActivateMany && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_PointerTo_ns1__ActivateMany(soap, "ns1:ActivateMany", &a->ns1__ActivateMany, ""))
+				{	soap_flag_ns1__ActivateMany--;
+					continue;
+				}
+			if (soap->error == SOAP_TAG_MISMATCH && soap_flag)
+			{	soap->error = SOAP_OK;
+				break;
+			}
+			if (soap_flag && soap->error == SOAP_NO_TAG)
+				break;
+			if (soap->error)
+				return NULL;
+		}
+	return a;
+}
+
+SOAP_FMAC1 struct __ns1__ActivateMany * SOAP_FMAC2 soap_instantiate___ns1__ActivateMany(struct soap *soap, int n, const char *type, const char *arrayType, size_t *size)
+{
+	DBGLOG(TEST, SOAP_MESSAGE(fdebug, "soap_instantiate___ns1__ActivateMany(%p, %d, %s, %s)\n", soap, n, type?type:"", arrayType?arrayType:""));
+	(void)type; (void)arrayType; /* appease -Wall -Werror */
+	struct __ns1__ActivateMany *p;
+	size_t k = sizeof(struct __ns1__ActivateMany);
+	if (n < 0)
+	{	p = SOAP_NEW(struct __ns1__ActivateMany);
+	}
+	else
+	{	p = SOAP_NEW_ARRAY(struct __ns1__ActivateMany, n);
+		k *= n;
+	}
+	DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Instantiated struct __ns1__ActivateMany location=%p n=%d\n", p, n));
+	soap_link(soap, p, SOAP_TYPE___ns1__ActivateMany, n, soap_fdelete);
+	if (size)
+		*size = k;
+	return p;
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___ns1__ActivateMany(struct soap *soap, const struct __ns1__ActivateMany *a, const char *tag, const char *type)
+{
+	if (soap_out___ns1__ActivateMany(soap, tag ? tag : "-ns1:ActivateMany", -2, a, type))
+		return soap->error;
+	return SOAP_OK;
+}
+
+SOAP_FMAC3 struct __ns1__ActivateMany * SOAP_FMAC4 soap_get___ns1__ActivateMany(struct soap *soap, struct __ns1__ActivateMany *p, const char *tag, const char *type)
+{
+	if ((p = soap_in___ns1__ActivateMany(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
 SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__Disconnect(struct soap *soap, struct __ns1__Disconnect *a)
 {
 	(void)soap; (void)a; /* appease -Wall -Werror */
@@ -9840,6 +10256,65 @@ SOAP_FMAC3 struct SOAP_ENV__Code ** SOAP_FMAC4 soap_get_PointerToSOAP_ENV__Code(
 
 #endif
 
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_ns1__ActivateMany(struct soap *soap, _ns1__ActivateMany *const*a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+#ifndef WITH_NOIDREF
+	if (!soap_reference(soap, *a, SOAP_TYPE__ns1__ActivateMany))
+		(*a)->soap_serialize(soap);
+#endif
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_ns1__ActivateMany(struct soap *soap, const char *tag, int id, _ns1__ActivateMany *const*a, const char *type)
+{
+	id = soap_element_id(soap, tag, id, *a, NULL, 0, type, SOAP_TYPE__ns1__ActivateMany, NULL);
+	if (id < 0)
+		return soap->error;
+	return (*a)->soap_out(soap, tag, id, (*a)->soap_type() == SOAP_TYPE__ns1__ActivateMany ? type : NULL);
+}
+
+SOAP_FMAC3 _ns1__ActivateMany ** SOAP_FMAC4 soap_in_PointerTo_ns1__ActivateMany(struct soap *soap, const char *tag, _ns1__ActivateMany **a, const char *type)
+{
+	(void)type; /* appease -Wall -Werror */
+	if (soap_element_begin_in(soap, tag, 1, NULL))
+		return NULL;
+	if (!a)
+		if (!(a = (_ns1__ActivateMany **)soap_malloc(soap, sizeof(_ns1__ActivateMany *))))
+			return NULL;
+	*a = NULL;
+	if (!soap->null && *soap->href != '#')
+	{	soap_revert(soap);
+		if (!(*a = (_ns1__ActivateMany *)soap_instantiate__ns1__ActivateMany(soap, -1, soap->type, soap->arrayType, NULL)))
+			return NULL;
+		(*a)->soap_default(soap);
+		if (!(*a)->soap_in(soap, tag, NULL))
+		{	*a = NULL;
+			return NULL;
+		}
+	}
+	else
+	{	a = (_ns1__ActivateMany **)soap_id_lookup(soap, soap->href, (void**)a, SOAP_TYPE__ns1__ActivateMany, sizeof(_ns1__ActivateMany), 0, soap_fbase);
+		if (soap->body && soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	return a;
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_ns1__ActivateMany(struct soap *soap, _ns1__ActivateMany *const*a, const char *tag, const char *type)
+{
+	if (soap_out_PointerTo_ns1__ActivateMany(soap, tag ? tag : "ns1:ActivateMany", -2, a, type))
+		return soap->error;
+	return soap_putindependent(soap);
+}
+
+SOAP_FMAC3 _ns1__ActivateMany ** SOAP_FMAC4 soap_get_PointerTo_ns1__ActivateMany(struct soap *soap, _ns1__ActivateMany **p, const char *tag, const char *type)
+{
+	if ((p = soap_in_PointerTo_ns1__ActivateMany(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_ns1__Disconnect(struct soap *soap, _ns1__Disconnect *const*a)
 {
 	(void)soap; (void)a; /* appease -Wall -Werror */
@@ -10427,68 +10902,6 @@ SOAP_FMAC3 ns4__Glove_x002eConfiguration_x002eProfile ** SOAP_FMAC4 soap_get_Poi
 	return p;
 }
 
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons5__ArrayOfint(struct soap *soap, ns5__ArrayOfint *const*a)
-{
-	(void)soap; (void)a; /* appease -Wall -Werror */
-#ifndef WITH_NOIDREF
-	if (!soap_reference(soap, *a, SOAP_TYPE_ns5__ArrayOfint))
-		(*a)->soap_serialize(soap);
-#endif
-}
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons5__ArrayOfint(struct soap *soap, const char *tag, int id, ns5__ArrayOfint *const*a, const char *type)
-{
-	char *mark;
-	id = soap_element_id(soap, tag, id, *a, NULL, 0, type, SOAP_TYPE_ns5__ArrayOfint, &mark);
-	if (id < 0)
-		return soap->error;
-	(*a)->soap_out(soap, tag, id, (*a)->soap_type() == SOAP_TYPE_ns5__ArrayOfint ? type : NULL);
-	soap_unmark(soap, mark);
-	return soap->error;
-}
-
-SOAP_FMAC3 ns5__ArrayOfint ** SOAP_FMAC4 soap_in_PointerTons5__ArrayOfint(struct soap *soap, const char *tag, ns5__ArrayOfint **a, const char *type)
-{
-	(void)type; /* appease -Wall -Werror */
-	if (soap_element_begin_in(soap, tag, 1, NULL))
-		return NULL;
-	if (!a)
-		if (!(a = (ns5__ArrayOfint **)soap_malloc(soap, sizeof(ns5__ArrayOfint *))))
-			return NULL;
-	*a = NULL;
-	if (!soap->null && *soap->href != '#')
-	{	soap_revert(soap);
-		if (!(*a = (ns5__ArrayOfint *)soap_instantiate_ns5__ArrayOfint(soap, -1, soap->type, soap->arrayType, NULL)))
-			return NULL;
-		(*a)->soap_default(soap);
-		if (!(*a)->soap_in(soap, tag, NULL))
-		{	*a = NULL;
-			return NULL;
-		}
-	}
-	else
-	{	a = (ns5__ArrayOfint **)soap_id_lookup(soap, soap->href, (void**)a, SOAP_TYPE_ns5__ArrayOfint, sizeof(ns5__ArrayOfint), 0, soap_fbase);
-		if (soap->body && soap_element_end_in(soap, tag))
-			return NULL;
-	}
-	return a;
-}
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons5__ArrayOfint(struct soap *soap, ns5__ArrayOfint *const*a, const char *tag, const char *type)
-{
-	if (soap_out_PointerTons5__ArrayOfint(soap, tag ? tag : "ns5:ArrayOfint", -2, a, type))
-		return soap->error;
-	return soap_putindependent(soap);
-}
-
-SOAP_FMAC3 ns5__ArrayOfint ** SOAP_FMAC4 soap_get_PointerTons5__ArrayOfint(struct soap *soap, ns5__ArrayOfint **p, const char *tag, const char *type)
-{
-	if ((p = soap_in_PointerTons5__ArrayOfint(soap, tag, p, type)))
-		if (soap_getindependent(soap))
-			return NULL;
-	return p;
-}
-
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons4__Side(struct soap *soap, enum ns4__Side *const*a)
 {
 	(void)soap; (void)a; /* appease -Wall -Werror */
@@ -10652,6 +11065,68 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTobool(struct soap *soap, bool *const*
 SOAP_FMAC3 bool ** SOAP_FMAC4 soap_get_PointerTobool(struct soap *soap, bool **p, const char *tag, const char *type)
 {
 	if ((p = soap_in_PointerTobool(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons5__ArrayOfint(struct soap *soap, ns5__ArrayOfint *const*a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+#ifndef WITH_NOIDREF
+	if (!soap_reference(soap, *a, SOAP_TYPE_ns5__ArrayOfint))
+		(*a)->soap_serialize(soap);
+#endif
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons5__ArrayOfint(struct soap *soap, const char *tag, int id, ns5__ArrayOfint *const*a, const char *type)
+{
+	char *mark;
+	id = soap_element_id(soap, tag, id, *a, NULL, 0, type, SOAP_TYPE_ns5__ArrayOfint, &mark);
+	if (id < 0)
+		return soap->error;
+	(*a)->soap_out(soap, tag, id, (*a)->soap_type() == SOAP_TYPE_ns5__ArrayOfint ? type : NULL);
+	soap_unmark(soap, mark);
+	return soap->error;
+}
+
+SOAP_FMAC3 ns5__ArrayOfint ** SOAP_FMAC4 soap_in_PointerTons5__ArrayOfint(struct soap *soap, const char *tag, ns5__ArrayOfint **a, const char *type)
+{
+	(void)type; /* appease -Wall -Werror */
+	if (soap_element_begin_in(soap, tag, 1, NULL))
+		return NULL;
+	if (!a)
+		if (!(a = (ns5__ArrayOfint **)soap_malloc(soap, sizeof(ns5__ArrayOfint *))))
+			return NULL;
+	*a = NULL;
+	if (!soap->null && *soap->href != '#')
+	{	soap_revert(soap);
+		if (!(*a = (ns5__ArrayOfint *)soap_instantiate_ns5__ArrayOfint(soap, -1, soap->type, soap->arrayType, NULL)))
+			return NULL;
+		(*a)->soap_default(soap);
+		if (!(*a)->soap_in(soap, tag, NULL))
+		{	*a = NULL;
+			return NULL;
+		}
+	}
+	else
+	{	a = (ns5__ArrayOfint **)soap_id_lookup(soap, soap->href, (void**)a, SOAP_TYPE_ns5__ArrayOfint, sizeof(ns5__ArrayOfint), 0, soap_fbase);
+		if (soap->body && soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	return a;
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons5__ArrayOfint(struct soap *soap, ns5__ArrayOfint *const*a, const char *tag, const char *type)
+{
+	if (soap_out_PointerTons5__ArrayOfint(soap, tag ? tag : "ns5:ArrayOfint", -2, a, type))
+		return soap->error;
+	return soap_putindependent(soap);
+}
+
+SOAP_FMAC3 ns5__ArrayOfint ** SOAP_FMAC4 soap_get_PointerTons5__ArrayOfint(struct soap *soap, ns5__ArrayOfint **p, const char *tag, const char *type)
+{
+	if ((p = soap_in_PointerTons5__ArrayOfint(soap, tag, p, type)))
 		if (soap_getindependent(soap))
 			return NULL;
 	return p;

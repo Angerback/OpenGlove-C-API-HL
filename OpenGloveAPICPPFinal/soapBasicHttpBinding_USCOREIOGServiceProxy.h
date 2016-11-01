@@ -94,5 +94,9 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         virtual int Disconnect(_ns1__Disconnect *ns1__Disconnect, _ns1__DisconnectResponse &ns1__DisconnectResponse)
         { return this->Disconnect(NULL, NULL, ns1__Disconnect, ns1__DisconnectResponse); }
         virtual int Disconnect(const char *soap_endpoint, const char *soap_action, _ns1__Disconnect *ns1__Disconnect, _ns1__DisconnectResponse &ns1__DisconnectResponse);
+        /// Web service operation 'ActivateMany' (returns SOAP_OK or error code)
+        virtual int ActivateMany(_ns1__ActivateMany *ns1__ActivateMany, _ns1__ActivateManyResponse &ns1__ActivateManyResponse)
+        { return this->ActivateMany(NULL, NULL, ns1__ActivateMany, ns1__ActivateManyResponse); }
+        virtual int ActivateMany(const char *soap_endpoint, const char *soap_action, _ns1__ActivateMany *ns1__ActivateMany, _ns1__ActivateManyResponse &ns1__ActivateManyResponse);
     };
 #endif

@@ -21,7 +21,7 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="OpenGloveAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="myService.h">
@@ -39,7 +39,7 @@
     <ClInclude Include="stdsoap2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGloveAPI.h">
+    <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -145,8 +145,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OpenGloveAPI.h" />
     <ClInclude Include="myService.h" />
+    <ClInclude Include="OpenGloveAPI.h" />
     <ClInclude Include="soapBasicHttpBinding_USCOREIOGServiceProxy.h" />
     <ClInclude Include="soapH.h" />
     <ClInclude Include="soapStub.h" />
